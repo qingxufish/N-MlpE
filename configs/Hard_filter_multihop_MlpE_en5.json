@@ -1,0 +1,40 @@
+{
+	"dataset": "WN18RR",
+	"model_name": "Hard_filter_multihop_MlpE",
+	"GPU": true,
+	"model_hyper_params": {
+		"entity_dim": 128,
+		"relation_dim": 128,
+		"input_dropout": 0.2,
+		"feature_map_dropout": 0.2,
+		"hidden_dropout": 0.4,
+		"label_smoothing": 0.1,
+		"goal_data_path": "./data/WN18RR/goal_data_file.data",
+		"logic_data_path": "./data/WN18RR/logic.data",
+		"use_bias": true
+	},
+	"attention_config": {
+		"head_num": 4,
+		"encoder_num": 5
+	},
+	"optimizer": {
+		"algorithm": "adam",
+		"lr": 0.03,
+		"weight_decay": 0
+	},
+	"train": {
+		"batch_size": 128,
+		"epochs": 200,
+		"seed": 124,
+		"pretrain_model": null
+	},
+	"eval": {
+		"do_validate": true,
+		"do_test": true,
+		"valid_steps": 1,
+		"batch_size": 64,
+		"eval_func": "eval_for_double"
+	},
+	"seed": 124,
+	"save_model_path": "./output"
+}

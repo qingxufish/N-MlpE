@@ -1,0 +1,39 @@
+{
+	"dataset": "WN18RR",
+	"model_name": "ConvE",
+	"GPU": true,
+	"model_hyper_params": {
+		"emb_dim": 128,
+		"reshape": [8, 16],
+		"conv_out_channels": 1800,
+		"conv_kernel_size": [15, 15],
+		"stride": 1,
+		"input_dropout": 0.0,
+		"feature_map_dropout": 0.0,
+		"hidden_dropout": 0.5,
+		"label_smoothing": 0.1,
+		"use_bias": true
+	},
+	"optimizer": {
+		"algorithm": "adam",
+		"lr": 0.05,
+		"lr_decay": 1.5,
+		"weight_decay": 0.0
+	},
+	"train": {
+		"batch_size": 256,
+		"epochs": 300,
+		"shuffle": true,
+		"seed": 123,
+		"pretrain_model": null
+	},
+	"eval": {
+		"do_validate": true,
+		"do_test": true,
+		"valid_steps": 1,
+		"batch_size": 256,
+		"eval_func": "eval_for_double"
+	},
+	"seed": 123,
+	"save_model_path": "./output"
+}

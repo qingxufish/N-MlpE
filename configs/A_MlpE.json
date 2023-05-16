@@ -1,0 +1,36 @@
+{
+	"dataset": "WN18RR",
+	"model_name": "A_MlpE",
+	"GPU": true,
+	"model_hyper_params": {
+		"entity_dim": 128,
+		"relation_dim": 128,
+		"input_dropout": 0.0,
+		"feature_map_dropout": 0.0,
+		"hidden_dropout": 0.5,
+		"label_smoothing": 0.1,
+		"use_bias": true
+	},
+	"optimizer": {
+		"algorithm": "adam",
+		"lr": 0.003,
+		"lr_decay": 10,
+		"weight_decay": 0.0
+	},
+	"train": {
+		"batch_size": 256,
+		"epochs": 2000,
+		"shuffle": true,
+		"seed": 123,
+		"pretrain_model": null
+	},
+	"eval": {
+		"do_validate": true,
+		"do_test": true,
+		"valid_steps": 1,
+		"batch_size": 256,
+		"eval_func": "eval_for_double"
+	},
+	"seed": 123,
+	"save_model_path": "./output"
+}
